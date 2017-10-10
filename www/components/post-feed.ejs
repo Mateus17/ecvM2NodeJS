@@ -1,14 +1,19 @@
-<!-- Afficher une variable dans le DOM -->
-<p><%= title %></p>
-
-<!-- Utiliser une condition if en EJS -->
-<% if (collection) { %>
-    <p>Collection chargée</p>
-<% } %>
-
 <!-- Utiliser une itération en EJS -->
-<ul>
+<section>
     <% for (let item of collection) { %>
-        <li><b><%= item.title %></b> <%= item.content %></li>
+        <article>
+            <!-- Vérifier le type de post pour afficher le bon contenu -->
+            <% if (item.type === 'IMG') { %>
+                <figure>
+                    <img src="<%= item.content %>">
+                    <figcaption><%= item.title %></figcaption>
+                </figure>
+            <% } else if (item.type === 'QUOTE') { %>
+                <q><%= item.title %></q>
+            <% } else { %>
+                <iframe src="https://www.youtube.com/embed/<%= item.content %>"></iframe>
+                <p><%= item.title %></p>
+            <% } %>
+        </article>
     <% } %>
-</ul>
+</section>
