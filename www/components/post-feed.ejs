@@ -1,0 +1,14 @@
+<!-- Afficher une variable dans le DOM -->
+<p><%= title %></p>
+
+<!-- Utiliser une condition if en EJS -->
+<% if (collection) { %>
+    <p>Collection chargée</p>
+<% } %>
+
+<!-- Utiliser une itération en EJS -->
+<ul>
+    <% for (let item of collection) { %>
+        <li><b><%= item.postTitle %></b> <%= item.postContent %><li>
+    <% } %>
+</ul>
