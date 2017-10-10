@@ -7,7 +7,7 @@ let bodyParser = require("body-parser"); // Permet d'analyser les requêtes sur 
 let front = require("./routes/front");
 
 // Définir le port de l'application
-let port = 8080;
+let port = 8081;
 
 // Initier le serveur
 let app = express();
